@@ -53,6 +53,41 @@ $isDark = $theme === 'dark';
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        .divGambar {
+          margin: 7%;
+          justify-content: center;
+        }
+        .divGambar img {
+          border-radius: 20px;
+          width: 100%;
+          height: auto;
+          transition: border-radius 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                      will-change: border-radius, transform;
+          backface-visibility: hidden;
+        }
+                .divGambar img {
+          border-radius: 20px;
+          width: 100%;
+          height: auto;
+          /* Menambahkan transisi agar perubahan radius terasa smooth */
+          transition: border-radius 0.4s ease, transform 0.4s ease;
+        }
+        
+        .divGambar img:hover {
+          /* Nilai radius yang ingin dicapai saat hover (misal: lebih bulat atau kotak) */
+          border-radius: 60px; 
+          /* Opsional: sedikit scale up agar efek lebih dinamis */
+          transform: scale(1.03);
+        }
+
+        .divGambar p {
+          font-weight: 500;
+          font-family: Segoe UI;
+          margin: 20px;
+          font-size: 15px;
+        }
     </style>
 </head>
 <body class="<?php echo $isDark ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'; ?> transition duration-300">
@@ -111,6 +146,13 @@ $isDark = $theme === 'dark';
             </div>
         </div>
     </section>
+    
+    <div id="gambar" class="divGambar">
+      <img src="rsHermana.webp" alt="fotoRS">
+      <center>
+        <p>Rumah Sakit Hermana Makassar</p>
+      </center>
+    </div>
 
     <!-- Tentang RS -->
     <section id="tentang" class="py-16 md:py-24 px-4 <?php echo $isDark ? 'bg-gray-800' : 'bg-gray-50'; ?>">
